@@ -1,0 +1,192 @@
+% -------------------------
+% LISTADOS DE CÓDIGO
+% -------------------------
+\RequirePackage{listings}
+\renewcommand{\lstlistingname}{Listado}
+\renewcommand{\lstlistlistingname}{Índice de listados}
+\lstset{
+    extendedchars=true,
+    inputencoding=utf8,
+    literate=
+    {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+    {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+    {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+    {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+    {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+    {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+    {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+    {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+    {ã}{{\~a}}1 {ẽ}{{\~e}}1 {ĩ}{{\~i}}1 {õ}{{\~o}}1 {ũ}{{\~u}}1
+    {Ã}{{\~A}}1 {Ẽ}{{\~E}}1 {Ĩ}{{\~I}}1 {Õ}{{\~O}}1 {Ũ}{{\~U}}1
+    {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+    {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+    {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+    {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+    {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1 {¡}{{!`}}1
+}
+
+% \input{latex-listings-powershell.tex}
+% \lstdefinestyle{ps-like}{
+%     commentstyle=\color{ps-lst-green},
+%     basicstyle=\small\ttfamily,
+%     backgroundcolor=\color{white},
+%     breaklines=true,
+%     captionpos=b,
+%     columns=fixed,
+%     extendedchars=true,
+%     frame=single,
+%     framesep=2pt,
+%     keepspaces=true,
+%     keywordstyle=\color{ps-lst-blue},
+%     language={powershell},
+%     % numbers=left,
+%     numberstyle=\small\ttfamily,
+%     showstringspaces=false,
+%     stringstyle=\color{ps-lst-red},
+%     tabsize=2,
+%     rulecolor=\color{gray},           % Color del marco
+% }
+
+\lstdefinestyle{verb-like}{
+    basicstyle=\ttfamily,
+    columns=fullflexible,
+    keepspaces=true,
+    frame=single,                     % Marco alrededor del código
+    rulecolor=\color{gray},           % Color del marco
+    captionpos=b,                     % Posición del título (abajo)
+}
+
+\lstdefinestyle{vscode-cpp-light}{
+    backgroundcolor=\color{white},    % Color de fondo
+    basicstyle=\ttfamily\small,       % Estilo de texto básico
+    keywordstyle=\color{blue},        % Palabras clave
+    commentstyle=\color{gray}\itshape, % Comentarios en cursiva
+    stringstyle=\color{red},          % Cadenas de texto
+    numberstyle=\tiny\color{gray},    % Estilo de los números de línea
+    identifierstyle=\color{black},    % Identificadores (nombres de variables, funciones)
+    breaklines=true,                  % Romper líneas largas
+    frame=single,                     % Marco alrededor del código
+    rulecolor=\color{gray},           % Color del marco
+    tabsize=2,                        % Tamaño de las tabulaciones
+    captionpos=b,                     % Posición del título (abajo)
+    showspaces=false,                 % No mostrar espacios en blanco
+    showstringspaces=false,           % No mostrar espacios en cadenas
+    showtabs=false,                   % No mostrar tabulaciones
+    % numbers=left,                     % Mostrar números de línea a la izquierda
+    numbersep=5pt,                    % Separación entre el código y los números de línea
+    emphstyle=\color{violet},         % Para destacar palabras clave personalizadas
+    morecomment=[l][\color{teal}]{//}, % Comentarios estilo C++
+    morecomment=[s][\color{teal}]{/*}{*/}, % Comentarios múltiples estilo C
+}
+
+\lstdefinestyle{vscode-python-light}{
+    backgroundcolor=\color{white},    % Color de fondo blanco
+    basicstyle=\ttfamily\small,       % Estilo de texto básico
+    keywordstyle=\color{blue},        % Palabras clave en azul
+    commentstyle=\color{gray}\itshape,% Comentarios en gris y cursiva
+    stringstyle=\color{red},          % Cadenas de texto en rojo
+    numberstyle=\tiny\color{gray},    % Estilo de los números de línea
+    identifierstyle=\color{black},    % Identificadores en negro
+    breaklines=true,                  % Romper líneas largas
+    frame=single,                     % Marco alrededor del código
+    rulecolor=\color{gray},           % Color del marco
+    tabsize=4,                        % Tamaño de las tabulaciones (Python usa 4 espacios)
+    captionpos=b,                     % Posición del título (abajo)
+    showspaces=false,                 % No mostrar espacios en blanco
+    showstringspaces=false,           % No mostrar espacios en cadenas
+    showtabs=false,                   % No mostrar tabulaciones
+    % numbers=left,                     % Mostrar números de línea a la izquierda
+    numbersep=5pt,                    % Separación entre el código y los números de línea
+    emph={self},                      % Resaltar la palabra "self"
+    emphstyle=\color{violet},         % Color de énfasis en "self" (violeta)
+    morekeywords={def, return, if, else, elif, for, while, break, continue, pass, None, True, False, class}, % Palabras clave de Python
+    morecomment=[l][\color{teal}]{\#}, % Comentarios de una sola línea en color teal (Python usa #)
+}
+
+\lstdefinestyle{vscode-bash-light}{
+    backgroundcolor=\color{white},    % Color de fondo blanco
+    basicstyle=\ttfamily\small,       % Estilo de texto básico
+    keywordstyle=\color{blue},        % Palabras clave en azul
+    commentstyle=\color{gray}\itshape,% Comentarios en gris y cursiva
+    stringstyle=\color{red},          % Cadenas de texto en rojo
+    numberstyle=\tiny\color{gray},    % Estilo de los números de línea
+    identifierstyle=\color{black},    % Identificadores en negro
+    breaklines=true,                  % Romper líneas largas
+    frame=single,                     % Marco alrededor del código
+    rulecolor=\color{gray},           % Color del marco
+    tabsize=2,                        % Tamaño de las tabulaciones
+    captionpos=b,                     % Posición del título (abajo)
+    showspaces=false,                 % No mostrar espacios en blanco
+    showstringspaces=false,           % No mostrar espacios en cadenas
+    showtabs=false,                   % No mostrar tabulaciones
+    % numbers=left,                     % Mostrar números de línea a la izquierda
+    numbersep=5pt,                    % Separación entre el código y los números de línea
+    emphstyle=\color{violet},         % Color para destacar palabras clave adicionales
+    morekeywords={if, fi, else, do, done, for, in, while, case, esac, function, echo, exit, return}, % Palabras clave de Bash
+    morecomment=[l][\color{teal}]{\#}, % Comentarios de una sola línea en Bash
+}
+
+\lstdefinestyle{vscode-sql-light}{
+    language=SQL,
+    backgroundcolor=\color{codebg},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{energiblue}\bfseries,
+    commentstyle=\color{energigray}\itshape,
+    stringstyle=\color{alertred},
+    identifierstyle=\color{black},
+    breaklines=true,
+    columns=fullflexible,
+    keepspaces=true,
+    frame=single,
+    rulecolor=\color{gray},
+    framesep=2pt,
+    showstringspaces=false,
+    showspaces=false,
+    showtabs=false,
+    tabsize=2,
+    captionpos=b,
+    % numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=5pt,
+    morekeywords={
+        SELECT,FROM,WHERE,INSERT,INTO,VALUES,
+        UPDATE,DELETE,CREATE,ALTER,DROP,
+        TABLE,DATABASE,VIEW,INDEX,
+        INNER,LEFT,RIGHT,FULL,JOIN,ON,
+        GROUP,BY,ORDER,HAVING,LIMIT,
+        DISTINCT,AS,AND,OR,NOT,NULL,
+        PRIMARY,KEY,FOREIGN,REFERENCES
+    },
+    morecomment=[l]{--},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+}
+
+
+% -------------------------------
+% GRAFICOS ANALISIS COSTES ANEXO
+% -------------------------------
+
+\newcommand{\serviciosYCoords}{
+    symbolic y coords={
+        {DynamoDB lecturas},
+        {DynamoDB escrituras},
+        {S3 peticiones},
+        {S3 almacenamiento},
+        {IoT shadows},
+        {IoT rules engine},
+        {IoT mensajes},
+        {IoT conectividad}
+    },
+    ytick={
+        {DynamoDB lecturas},
+        {DynamoDB escrituras},
+        {S3 peticiones},
+        {S3 almacenamiento},
+        {IoT shadows},
+        {IoT rules engine},
+        {IoT mensajes},
+        {IoT conectividad}
+    },
+    yticklabels={}
+}

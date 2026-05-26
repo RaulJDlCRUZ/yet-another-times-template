@@ -1,0 +1,99 @@
+\NeedsTeXFormat{LaTeX2e}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{tocloft}
+\usepackage{appendix}
+
+\newcommand{\bigrule}{\titlerule[0.5mm]}
+
+% -------------------------
+% NOMBRES OFICIALES DE APARTADOS DOCUMENTO (AJUSTADO PARA HITOS)
+% -------------------------
+
+\addto\captionsspanish{%
+  \renewcommand{\chaptername}{Sección}
+}
+
+% -------------------------
+% FORMATO ANEXOS
+% -------------------------
+\addto\captionsspanish{%
+  \renewcommand\appendixname{Anexo}
+  \renewcommand\appendixpagename{Anexos}
+}
+
+\newif\ifinappendix
+\inappendixfalse
+
+\let\oldappendix\appendix
+\renewcommand{\appendix}{%
+  \oldappendix
+  \inappendixtrue
+}
+
+% -------------------------
+% FORMATO TITULOS
+% -------------------------
+
+% \titleformat{\chapter}[display]% {<command>}[<shape>]
+% {\filleft\bfseries\Huge}% {<format>}
+% {\titlerule
+% \vspace{0.2\baselineskip}
+% \Large{\MakeUppercase\chaptertitlename{} \thechapter}
+% } % {<label>}
+% {0mm}{}[\bigrule\vspace{-1cm}]% {<sep>}{<before-code>}[<after-code>]
+
+
+\titleformat{\chapter}[display]
+{\filleft\bfseries\Huge}
+{\titlerule
+\vspace{0.2\baselineskip}
+\Large
+  \MakeUppercase{%
+    \ifinappendix
+      Anexo \thechapter:
+    \else
+      \chaptertitlename{} \thechapter
+    \fi
+  }
+}
+{0mm}{}
+[\bigrule\vspace{-1cm}]
+
+\titleformat{\section}{\bfseries\MakeUppercase}{\thesection .}{1ex}{}
+\titleformat{\subsection}{\bfseries}{\thesubsection .}{1ex}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection .}{1ex}{}
+
+%\titlespacing*{<command>}{<left>}{<before-sep>}{<after-sep>}
+\titlespacing{\chapter}{0pt}{0pt}{40pt}
+\titlespacing*{\section}{0pt}{.5\baselineskip plus 2pt}{.2\baselineskip plus 2pt}
+\titlespacing*{\subsection}{0pt}{.5\baselineskip plus 2pt}{.2\baselineskip plus 2pt}
+\titlespacing*{\subsubsection}{0pt}{.5\baselineskip plus 2pt}{.2\baselineskip plus 2pt}
+
+% -------------------------
+% HITO: SEPARADOR VISUAL
+% -------------------------
+\newcounter{hito}
+\renewcommand{\thehito}{\Roman{hito}}
+
+\newcommand{\hito}[1]{%
+  \clearpage
+  \thispagestyle{empty}
+
+  \refstepcounter{hito} % contador propio
+  \addcontentsline{toc}{chapter}{Hito \Roman{hito}: #1}
+
+  \vspace*{\fill}
+  \begin{center}
+    {\Huge\bfseries HITO \Roman{hito}\par}
+    \vspace{1cm}
+    {\LARGE #1\par}
+  \end{center}
+  \vspace*{\fill}
+  \clearpage
+}
+
+\newcommand{\hitotoc}[1]{%
+  \addtocontents{toc}{\protect\vspace{10pt}}
+  \addcontentsline{toc}{chapter}{\bfseries Hito \Roman{hito}: #1}
+}

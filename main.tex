@@ -1,0 +1,52 @@
+\makeatletter
+\def\input@path{{src/}} % Usamos preámbulo para cargar path con estilos
+\makeatother
+
+% \usepackage{src/yatt}
+\documentclass{yatt}
+
+\title{\nombredocu}
+\author{\myFullName}
+
+% Idioma principal: Español
+\newif\ifspanish
+\spanishtrue
+%\spanishfalse
+
+\begin{document}
+\input{src/layout/yatt-pagestyle.tex}
+% -------------------------
+% PORTADA
+% -------------------------
+\frontmatter
+\input{frontmatter/titlepage}
+
+% -------------------------
+% TABLA DE CONTENIDOS (TOC)
+% -------------------------
+\tableofcontents
+
+% -------------------------
+% CONTENIDO PRINCIPAL
+% -------------------------
+\mainmatter
+\input{mainmatter/main}
+
+% -------------------------
+% SECCIÓN BIBLIOGRÁFICA
+% -------------------------
+
+\newpage
+\phantomsection  % Ojo necesario con hyperref.
+\addcontentsline{toc}{chapter}{\bibname} % Añade la bibliografía al Índice de contenidos
+\bibliographystyle{apacite}
+\nocite{*} % COMENTAR SI NO QUIERES MOSTRAR REFERENCIAS NO CITADAS PERO INCLUIDAS EN BIB
+\bibliography{bibliography} % Nombre del fichero .bib (sin extensión)
+
+% -------------------------
+% ANEXOS
+% -------------------------
+% \backmatter
+\input{backmatter/appx}
+
+\end{document}

@@ -1,0 +1,41 @@
+% --------------------------
+% QUOTE ESTILO MARKDOWN
+% --------------------------
+\newtcolorbox{blockquote}{
+    colback=gray!5!white,    % Color de fondo (gris muy claro)
+    colframe=gray!40!black,  % Color de la línea lateral
+    sharp corners,           % Esquinas rectas (también puedes usar 'sharp corners')
+    boxrule=0pt,             % Sin bordes alrededor...
+    leftrule=3pt,            % ...excepto el borde izquierdo (la barra)
+    enhanced,                % Esta opción activa el motor de 'skins'
+    breakable,               % Permite que el bloque cambie de página
+    left=10pt,               % Espaciado interno a la izquierda
+    right=10pt               % Espaciado interno a la derecha
+}
+
+%----------------------------------------------------------------------
+% COMANDOS AUXILIARES DE DIA-SEMANA-MES
+% (DEPENDE DE QUE ESTÉN DEFINIDOS SUS COLORES)
+%----------------------------------------------------------------------
+\newcommand{\diaria}{\colorbox{alertred!15}{\small\textbf{Diaria}}}
+\newcommand{\semanal}{\colorbox{alertamber!15}{\small\textbf{Semanal}}}
+\newcommand{\mensual}{\colorbox{alertgreen!15}{\small\textbf{Mensual}}}
+\newcommand{\umbral}[1]{\textcolor{alertred}{\textbf{#1}}}
+\newcommand{\kpi}[1]{\texttt{\small #1}}
+
+% --------------------------
+% ESTRELLAS DE VALORACIÓN
+% --------------------------
+\newcommand{\fstar}{\ensuremath{\bigstar}}
+\newcommand{\estar}{\ensuremath{\star}}
+
+% --------------------------
+% CAJAS PARA NIVEL MADUREZ/ESCALA DE IMPLEMENTACIÓN
+% --------------------------
+\newcommand{\nivelcaja}[2]{%
+  \colorbox{#1}{\color{white}\textbf{#2}}%
+}
+
+\newcommand{\escala}[2]{%
+  \colorbox{#1}{\color{white}\textbf{#2}}%
+}

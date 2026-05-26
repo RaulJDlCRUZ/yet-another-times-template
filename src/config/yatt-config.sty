@@ -1,0 +1,63 @@
+% -------------------------
+% PATH PARA IMÁGENES
+% -------------------------
+\graphicspath{{./assets/images/)}}
+
+% -------------------------
+% EXTENSIONES DE IMÁGENES
+% -------------------------
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+% -------------------------
+% INTERLINEADO
+% -------------------------
+\renewcommand{\baselinestretch}{1.0} % 1.0 = Interlineado sencillo
+
+% --------------------------
+% QUITAR SANGRÍA
+% --------------------------
+\setlength{\parindent}{0pt}
+
+% -------------------------
+% DESACTIVACIÓN DE DIVISIÓN DE PALABRAS
+% -------------------------
+% Uso: \nodivide o \nodivide[<n>]
+\newcommand{\nodivide}[1][10000]{%
+	\hyphenpenalty=#1 % Valor típico: hasta 10000
+	\exhyphenpenalty=#1 % Valor típico: hasta 10000
+	\sloppy
+}
+
+% -------------------------
+% EVITACIÓN DE VIUDAS Y HUÉRFANAS
+% -------------------------
+% Uso: \nowidowandorphan o \nowidowandorphan[<n>]
+\newcommand{\nowidowandorphan}[1][10000]{%
+	\clubpenalty=#1  % % Valor típico: hasta 10000
+	\widowpenalty=#1 % % Valor típico: hasta 10000
+}
+
+% -------------------------
+% EVITACIÓN DE DIVISIÓN DE NOTAS AL PIE
+% -------------------------
+% Uso: \nodividenotas o \nodividenotas[<n>]
+\newcommand{\nodividenotes}[1][10000]{%
+	\interfootnotelinepenalty=#1 % Valor típico: hasta 10000
+}
+
+% --------------------------
+% ESTILO DE ITEMS (BULLETS)
+% --------------------------
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemiii}{$\cdot$}
+
+% --------------------------
+% REFERENCIAR FOTO
+% --------------------------
+\newcommand{\myfigref}[1]{\figurename\ \ref{#1}}
+
+% --------------------------
+% REFERENCIAR OTROS (et al.)
+% --------------------------
+\renewcommand{\BOthers}[1]{et al.\hbox{}}
+\renewcommand{\BOthersPeriod}[1]{et al.\hbox{}}

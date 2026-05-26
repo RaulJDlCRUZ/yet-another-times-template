@@ -1,0 +1,88 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{yatt-deps-extra}[Dependencias adicionales]
+
+% -------------------------------------------------
+% BIBLIOGRAFIA - ESTILO APA
+% -------------------------------------------------
+\RequirePackage[natbibapa]{apacite}
+
+% -------------------------------------------------
+% ESTILO CABECERAS Y PIES
+% (CONFIGURACIÓN ES layout/pagestyle.tex)
+% -------------------------------------------------
+\RequirePackage{fancyhdr}
+
+% -------------------------------------------------
+% Tablas
+% -------------------------------------------------
+\RequirePackage{array}
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{ragged2e} % Para un mejor alineado
+
+\RequirePackage{multirow}
+\RequirePackage{multicol}
+
+% Definimos un tipo de columna para código que permite saltos
+\newcolumntype{C}{>{\ttfamily\RaggedRight\arraybackslash}p{7.5cm}}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% -------------------------------------------------
+% LONG TABLE
+% -------------------------------------------------
+\RequirePackage{longtable}
+\RequirePackage{xltabular}
+
+% -------------------------------------------------
+% Figuras
+% -------------------------------------------------
+\RequirePackage{subcaption}
+\RequirePackage{rotating}
+\RequirePackage{float}
+
+% -------------------------------------------------
+% Rotar páginas para tablas grandes
+% -------------------------------------------------
+\RequirePackage{pdflscape}
+
+% -------------------------------------------------
+% Personalización de captions
+% -------------------------------------------------
+\RequirePackage[margin=10pt,font=small,labelfont=bf,format=hang]{caption}
+\captionsetup[table]{position=bottom}
+
+% -------------------------------------------------
+% Utilidades
+% -------------------------------------------------
+\RequirePackage{lipsum}
+\RequirePackage{url}
+\RequirePackage{comment}
+
+% -------------------------------------------------
+% SVG
+% -------------------------------------------------
+\RequirePackage[inkscapelatex=false]{svg}
+
+% -------------------------------------------------
+% Cajas decorativas - para la firma de la portada
+% -------------------------------------------------
+\RequirePackage{fancybox}
+
+% -------------------------------------------------
+% ARBOL DE DIRECTORIOS
+% -------------------------------------------------
+\RequirePackage{dirtree}
+
+% -------------------------------------------------
+% DEPENDENCIAS PARA QUOTE
+% -------------------------------------------------
+\RequirePackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+% -------------------------------------------------
+% NOTAS AL PIE DE PAGINA (ABAJO DEL TODO)
+% -------------------------------------------------
+\RequirePackage[bottom]{footmisc}
+\setlength{\skip\footins}{0.5cm}

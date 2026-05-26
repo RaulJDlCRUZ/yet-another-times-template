@@ -1,0 +1,29 @@
+\begin{titlepage}
+    \begin{center}
+        \includesvg[width=2cm]{assets/logos/LogoUCLM.svg}\par\vspace{1cm}
+        \vspace{4cm}
+        {\huge\bfseries \nombredocu\par}
+        {\large \descripciondocu}
+        \vspace{3cm}
+        \par
+        %------------------------------------------------
+        %	Author name and information
+        %------------------------------------------------
+        \normalsize
+        \shadowbox{
+        \begin{minipage}{0.8\textwidth}
+        \raggedright % Right align the text
+            \ \\
+            \textbf{Autor:} \myname \\\vspace{.15cm}
+            \textbf{Fecha:} \today \\%\vspace{-.1cm}
+            \ifCajaFirma
+              \hrulefill
+              \vspace{.25cm}\\
+              \textbf{Firma:} \\
+            \fi
+            \vspace{.25cm} % Espacio para la firma
+        \end{minipage}
+      }
+    \end{center}
+    \vspace{2cm}
+\end{titlepage}

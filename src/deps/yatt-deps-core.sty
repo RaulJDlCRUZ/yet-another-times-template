@@ -1,0 +1,47 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{yatt-deps-core}[Dependencias básicas]
+
+\RequirePackage{iftex}
+
+% -------------------------------------------------
+% Codificación y fuentes (dependiente del motor)
+% -------------------------------------------------
+\ifPDFTeX
+  % pdfLaTeX
+  \RequirePackage[T1]{fontenc} % Output font encoding for international characters
+  \RequirePackage[utf8]{inputenx} % Required for inputting international characters
+  \RequirePackage{newtxtext}
+  \RequirePackage{newtxmath}
+\else
+  % LuaLaTeX / XeLaTeX
+  \RequirePackage{fontspec}
+  % newtx no es compatible aquí; se usan fuentes del sistema, como p.e:
+  % \setmainfont{Times New Roman}
+\fi
+
+% -------------------------------------------------
+% Idioma español
+% -------------------------------------------------
+\RequirePackage[spanish,es-noindentfirst,es-tabla]{babel}
+
+% -------------------------------------------------
+% Color, gráficos y enlaces
+% -------------------------------------------------
+\RequirePackage[table,xcdraw,dvipsnames]{xcolor}
+\RequirePackage{graphicx}
+
+\RequirePackage{siunitx}
+\RequirePackage{microtype}
+
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% -------------------------------------------------
+% Párrafos
+% -------------------------------------------------
+\RequirePackage[skip=.3\baselineskip plus 2pt,indent]{parskip}
+
+% -------------------------------------------------
+% Enlaces (siempre al final)
+% -------------------------------------------------
+\RequirePackage[hidelinks]{hyperref}
